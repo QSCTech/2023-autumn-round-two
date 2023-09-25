@@ -9,3 +9,7 @@
 形式可以参考这张低保真图：
 
 <img width="300" height="480" src="./refer.jpg"/>
+
+## 可能需要的学习资料
+
+如果你对figma了解甚少，我们有[figma中文用户手册](https://figmachina.com/) 和[figma中文社区](https://www.figma.cool/)
