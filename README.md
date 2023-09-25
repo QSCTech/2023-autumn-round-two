@@ -23,9 +23,9 @@
 | ---- | ----------|----- | --------- | ---------------------------------------------------------- |
 | 01   | Naive Server |技术| naive-server |[@Torch](https://github.com/Cillo-x) |
 | 02   |Magic Clock|技术/产品|magicClock|[@锈儿](https://github.com/Winfred666) |
-| 03   | zjuam |技术| zjuam | [@sync](https://github.com/sync-99) fangbozhen|
+| 03   | zjuam |技术| zjuam | [@sync](https://github.com/sync-99)|
 | 04   | markdown |技术| markdown | @Gingo |
-| 05   | 启真湖寻宝 |产品|goldMiner| [@heddxh](https://github.com/heddxh) 玉凤 |
+| 05   | 启真湖寻宝 |产品|goldMiner| [@heddxh](https://github.com/heddxh)|
 | 06   |原型图绘制|-|common|@坷粑 |
 
 - 题目**原型图绘制**为必答题。请所有参与二面的面试者作答该题。
