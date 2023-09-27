@@ -64,7 +64,7 @@ class TestSignin:
         user = test_get_user
         data = {'username': user[0], 'password': user[1]}
 
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] == 0
@@ -75,7 +75,7 @@ class TestSignin:
         user = test_get_user
         data = {'username': user[0], 'password': 'kk'}
 
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] != 0
@@ -83,7 +83,7 @@ class TestSignin:
     def test_signin_no_username(self, test_readConfig):
         ''' 测试没有用户名登录 '''
         data = {'password': '123456'}
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] != 0
@@ -96,7 +96,7 @@ class TestCheckin:
         # Get token
         user = test_get_user
         data = {'username': user[0], 'password': user[1]}
-        resp = requests.post('http://{host}:{port}/signin'.format(**test_readConfig), data=data, timeout=1)
+        resp = requests.post('http://{host}:{port}/signin'.format(**test_readConfig), json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] == 0
@@ -108,7 +108,7 @@ class TestCheckin:
             'access_token': self.token,
             'word': 'test',
             }
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] == 0
@@ -117,7 +117,7 @@ class TestCheckin:
     def test_checkin_no_token(self):
         ''' 测试没有token '''
         data = {'word': 'test'}
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] != 0
@@ -128,7 +128,7 @@ class TestCheckin:
             'access_token': 'invalid',
             'word': 'test',
             }
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] != 0
@@ -150,7 +150,7 @@ class TestSignup:
             'username': username,
             'password': password,
         }
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] == 0
@@ -161,7 +161,7 @@ class TestSignup:
             'username': self.user[0],
             'password': self.user[1],
         }
-        resp = requests.post(self.url, data=data, timeout=1)
+        resp = requests.post(self.url, json=data, timeout=1)
         assert resp.status_code == requests.codes.ok
         respJson = resp.json()
         assert respJson['code'] != 0
